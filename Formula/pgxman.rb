@@ -5,23 +5,23 @@
 class Pgxman < Formula
   desc "PostgreSQL Extensions Manager"
   homepage "https://github.com/pgxman/pgxman"
-  version "0.0.36"
+  version "0.1.0"
   license "Apache 2.0"
 
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/pgxman/release/releases/download/v0.0.36/pgxman_darwin_amd64.tar.gz"
-      sha256 "9d7fe5a0b1f506407fb86f8d26a8b89549fc21c43f4d7a8e7e5e9e2b6f0f05f9"
+    if Hardware::CPU.arm?
+      url "https://github.com/pgxman/release/releases/download/v0.1.0/pgxman_darwin_arm64.tar.gz"
+      sha256 "18dfb2ea5ce5d7b9ce46aa9b017a6ddebd30053650cbd013a735659d77c9ed85"
 
       def install
         bin.install "bin/pgxman"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/pgxman/release/releases/download/v0.0.36/pgxman_darwin_arm64.tar.gz"
-      sha256 "e7b00fb478eb943337fca70771dbaff2cebea3c7cead93545fbfa033d138a976"
+    if Hardware::CPU.intel?
+      url "https://github.com/pgxman/release/releases/download/v0.1.0/pgxman_darwin_amd64.tar.gz"
+      sha256 "3961e585069b0b59c87141313a0ead70bc7a5c9f34088c0cf390e90d9b32763c"
 
       def install
         bin.install "bin/pgxman"
@@ -31,24 +31,24 @@ class Pgxman < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/pgxman/release/releases/download/v0.0.36/pgxman_linux_amd64.tar.gz"
-      sha256 "ee92754fdeaf01b4d6a471393355004baedfcb47338067815f41439e96a4c21c"
+      url "https://github.com/pgxman/release/releases/download/v0.1.0/pgxman_linux_amd64.tar.gz"
+      sha256 "772459349883e7742e9ff7e457ab80975ba4f3ccd4a2b5abf1c51f35649c0265"
 
       def install
         bin.install "bin/pgxman"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/pgxman/release/releases/download/v0.0.36/pgxman_linux_armv6.tar.gz"
-      sha256 "3cbc540a4252915fffa40a5f004a66cb3712206582001e5aa91341485eafd1d9"
+      url "https://github.com/pgxman/release/releases/download/v0.1.0/pgxman_linux_armv6.tar.gz"
+      sha256 "98e297ead38b014bc326dd603ff2bd3582f6fb5f182d99e7884917aacdff825f"
 
       def install
         bin.install "bin/pgxman"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/pgxman/release/releases/download/v0.0.36/pgxman_linux_arm64.tar.gz"
-      sha256 "5375bef024b7f1a08a5ec1198c2ef2fa7d7e798f47477892b3a43db6a22b36a3"
+      url "https://github.com/pgxman/release/releases/download/v0.1.0/pgxman_linux_arm64.tar.gz"
+      sha256 "bacc62474427f7c14e4fac1d2a434c84161a129063064da17dea03fa9213ea0b"
 
       def install
         bin.install "bin/pgxman"
